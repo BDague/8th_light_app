@@ -12,8 +12,8 @@
 {% for author in book.authors %}
 {{ author }} <br>
 {% endfor %}
-{{ book.publisher }}
-{{ book.info_link }}
-{{ book.picture_link }}
+{{ book.publisher }} <br>
+{{ book.info_link }} <br>
+<image src="{{ book.picture_link }}"> <br>
 {% endfor %}
 {% endif %}

@@ -10,5 +10,5 @@ class Book(object):
             self.publisher = info['publisher']
         except KeyError:
             self.publisher = info['publishedDate']
-        self.picture_link = info['imageLinks']
+        self.picture_link = info['imageLinks']['thumbnail']
         self.info_link = info['infoLink']
