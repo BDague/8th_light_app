@@ -1,0 +1,50 @@
+
+body {
+    font-family: 'Old Standard TT', serif;
+    color: white;
+
+}
+
+body, html { 
+    height: 100%;
+}
+
+.search_text {
+    text-align: center;
+    background-color: #000;
+    width: 100%;
+}
+
+.book-container {
+    margin: 20px 20px 0 0;
+    overflow: auto;
+    color: #8C7409;
+    border: 5px solid #8C7409;
+    background-color: #441202;
+    box-shadow: 10px 10px 2px #888;
+}
+
+.book-image {
+    float: left;
+    padding: 10px;
+}
+
+
+img.book-image {
+    max-width: 110px;
+}
+
+.book-title {
+    font-weight: bold;
+}
+
+.book-info {
+    margin-left: 110px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #000;
+}

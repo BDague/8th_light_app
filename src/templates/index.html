@@ -1,19 +1,52 @@
 <!DOCTYPE HTML>
 
-<h1> Search for a book! </h1>
+<head>
+    <link rel="stylesheet" href="{{url_for('static', filename='main.css') }}">
+<style>
 
-<form action='/' method='POST'>
-    <input type='text' name='term'>
-    <input type='submit' value='Search'>
-</form>
+body {
+    background-image: url("{{ url_for('static', filename='book_shelf_background.jpg') }}");
+    background-repeat: repeat;
+}
+
+</style>
+</head>
+
+<body>
+    <div class="search_text">
+        <h1> Search for a book! </h1>
+
+        <form action='/' method='POST'>
+            <input type='text' name='term'>
+            <input type='submit' value='Search'>
+        </form>
+        <br> 
+    </div>
 {% if book_data %}
+
 {% for book in book_data %}
-{{ book.title }} <br>
-{% for author in book.authors %}
-{{ author }} <br>
-{% endfor %}
-{{ book.publisher }} <br>
-{{ book.info_link }} <br>
-<image src="{{ book.picture_link }}"> <br>
+<div class="book-container">
+    <image class="book-image" src="{{ book.picture_link }}" alt="{{ url_for('static', filename='default_book.png') }}">
+<h2 class="book-title"> {{ book.title }} </h2> <br>
+<div class="book-info">
+    <p>
+    Written by: 
+    {% for author in book.authors %}
+    {{ author }} 
+    {% endfor %}
+    <br>
+    Publishing Information: {{ book.publisher }} <br>
+    <a href="{{ book.info_link }}">Click here for additional information</a><br>
+    </p>
+</div>
+</div>
 {% endfor %}
 {% endif %}
+
+</body>
+
+<footer>
+    Created by Brian Dague <br>
+    Background courtesy of : <a href="https://www.freepik.com/free-photos-vectors/poster">Poster vector created by macrovector - www.freepik.com</a>
+    
+</footer>

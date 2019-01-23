@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 import requests as api_interface
 from info_parser import InfoParser
 import os
-application = Flask(__name__, template_folder='templates')
+application = Flask(__name__, template_folder='templates', static_folder='static')
 
 @application.route('/', methods=['GET'])
 def open():
@@ -14,6 +14,4 @@ def search():
     response = api_interface.get(formed_url)
     parser = InfoParser()
     books = parser.get_book_data_from_json(response.json())
-    for book in books:
-        print(book.title)
     return render_template('index.html', book_data=books)

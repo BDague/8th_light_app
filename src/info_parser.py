@@ -19,7 +19,6 @@ class InfoParser(object):
         for book_data in items:
             books.append(Book(book_data))
 
-        print(books)
         return books
 
 
