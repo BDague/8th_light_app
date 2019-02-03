@@ -4,7 +4,7 @@ import os
 class BookAPIRequestHandler():
 
     def __init__(self):
-        self.url = "https://www.googleapis.com/books/v1/volumes?q={}&key={}"
+        self.url = "https://www.googleapis.com/books/v1/volumes?q={}&key={}&fields=items(volumeInfo(title, authors, publisher, imageLinks, infoLink))"
         self.timeout = 10
 
     def request_book_search(self, term):

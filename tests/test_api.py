@@ -15,7 +15,7 @@ class TestAPIAssumptions(unittest.TestCase):
 
     def setUp(self):
         self.api_key = os.environ['GOOG_API_KEY']
-        self.url_string = "https://www.googleapis.com/books/v1/volumes?q={}&key={}"
+        self.url_string = "https://www.googleapis.com/books/v1/volumes?q={}&key={}&fields=items(volumeInfo(title, authors, publisher, imageLinks, infoLink))"
 
         self.response = requests.get(self.url_string.format('Design', self.api_key))
         self.nonsense_response = requests.get(self.url_string.format('oqwuerjiklfj2u9385983qeiowhfasdkjln2389ewhioffadknsvlejoirghty4390efjowi', self.api_key))
