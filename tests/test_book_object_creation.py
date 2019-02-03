@@ -1,7 +1,7 @@
 import unittest
 from src.book import Book
 
-class book_tester(unittest.TestCase):
+class TestBookGenereatesCorrectly(unittest.TestCase):
     def setUp(self):
         self.mock_api_json = { 'volumeInfo': 
                     {
