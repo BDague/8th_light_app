@@ -1,4 +1,5 @@
 from flask import url_for
+
 class Book(object):
 
     """Data structure to hold information about books"""

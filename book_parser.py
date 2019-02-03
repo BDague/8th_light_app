@@ -1,6 +1,6 @@
 from book import Book
 
-class InfoParser(object):
+class BookParser(object):
 
     """Offers methods to collect data from the books as passed ot it by the 
     Google books API"""

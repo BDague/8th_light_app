@@ -57,4 +57,4 @@ class TestAPIAssumptions(unittest.TestCase):
         self.assertTrue('infoLink' in self.book_info)
 
     def test_how_responds_to_nonsense(self):
-        self.assertFalse('items' in nonsense)
+        self.assertFalse('items' in self.nonsense)

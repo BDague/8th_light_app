@@ -1,5 +1,5 @@
 import unittest
-from src.book import Book
+from book import Book
 
 class TestBookGenereatesCorrectly(unittest.TestCase):
     def setUp(self):
@@ -24,10 +24,10 @@ class TestBookGenereatesCorrectly(unittest.TestCase):
     def test_gets_publisher(self):
         self.assertEqual(self.book.publisher, self.mock_api_json['volumeInfo']['publisher'])
 
-    def test_gets_ext_info(self):
+    def test_gets_thumbnail(self):
         self.assertEqual(self.book.picture_link, self.mock_api_json['volumeInfo']['imageLinks']['thumbnail'])
          
-    def test_gets_thumbnail(self):
+    def test_gets_info_link(self):
         self.assertEqual(self.book.info_link, self.mock_api_json['volumeInfo']['infoLink'])
 
 
