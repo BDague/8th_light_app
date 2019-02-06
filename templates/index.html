@@ -19,10 +19,9 @@ body {
         <h1> Search for a book! </h1>
 
         <form action='/' method='POST'>
-            <input type='text' name='term'>
+            <input type='search' name='term' autofocus>
             <input type='submit' value='Search'>
         </form>
-        <br> 
     {% if page_number %}
     <a href="{{ '/{}/{}'.format(search_word, 1) }}">{{ First }}</a> ...
     {% for page in range(0, 7) %}
@@ -35,15 +34,12 @@ body {
 
 {% for book in book_data %}
 <div class="book-container">
-    <image class="book-image" src="{{ book.picture_link }}" alt="{{ url_for('static', filename='default_book.png') }}">
+    <image class="book-image" src="{{ book.picture_link }}" alt="No image available.">
 <h2 class="book-title"> {{ book.title }} </h2> <br>
 <div class="book-info">
-    <p>
-    Written by: {{ book.authors }}
-    <br>
-    Publishing Information: {{ book.publisher }} <br>
-    <a href="{{ book.info_link }}">Click here for additional information</a><br>
-    </p>
+    <p> Written by: {{ book.authors }} </p>
+    <p> Publishing Information: {{ book.publisher }} </p>
+    <p> <a href="{{ book.info_link }}">Click here for additional information</a> </p>
 </div>
 </div>
 {% endfor %}

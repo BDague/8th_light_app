@@ -18,7 +18,6 @@ class BookParser(object):
         books = []
         for book_data in items:
             books.append(Book(book_data))
-
         return books
 
 

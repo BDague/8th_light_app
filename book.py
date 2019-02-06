@@ -5,7 +5,7 @@ class Book(object):
     """Data structure to hold information about books"""
 
     def __init__(self, json):
-        keys = ['title', 'authors', 'publisher', 'imageLinks', 'infoLink']
+        keys = ['title', 'publisher', 'imageLinks', 'infoLink']
         info = json['volumeInfo']
         data = {}
         for key in keys:
@@ -14,10 +14,13 @@ class Book(object):
             except KeyError:
                 data[key] = "Not Listed"
         self.title = data['title']
-        self.authors = ", ".join(data['authors'])
+        if 'authors' in info:
+            self.authors = ", ".join(info['authors'])
+        else:
+            self.authors = 'Not Listed'
         self.publisher = data['publisher']
         try:
             self.picture_link = data['imageLinks']['thumbnail']
         except (KeyError, TypeError) as exception:
-            self.picture_link = url_for('static',  filename='default_book.png')
+            self.picture_link = ""
         self.info_link = data['infoLink']
