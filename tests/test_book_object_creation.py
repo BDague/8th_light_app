@@ -16,19 +16,19 @@ class TestBookGenereatesCorrectly(unittest.TestCase):
         self.book = Book(self.mock_api_json)
 
     def test_gets_title(self):
-        self.assertEqual(self.book.title, self.mock_api_json['volumeInfo']['title'])
+        self.assertEqual(self.book.title, "Book Title")
 
     def test_gets_author(self): 
-        self.assertEqual(self.book.authors, self.mock_api_json['volumeInfo']['authors'])
+        self.assertEqual(self.book.authors, "Au Thor, Aut Hor")
 
     def test_gets_publisher(self):
-        self.assertEqual(self.book.publisher, self.mock_api_json['volumeInfo']['publisher'])
+        self.assertEqual(self.book.publisher, "Publisher")
 
     def test_gets_thumbnail(self):
-        self.assertEqual(self.book.picture_link, self.mock_api_json['volumeInfo']['imageLinks']['thumbnail'])
+        self.assertEqual(self.book.picture_link, "")
          
     def test_gets_info_link(self):
-        self.assertEqual(self.book.info_link, self.mock_api_json['volumeInfo']['infoLink'])
+        self.assertEqual(self.book.info_link, "www.info.com")
 
 
 

@@ -14,7 +14,7 @@ class Book(object):
             except KeyError:
                 data[key] = "Not Listed"
         self.title = data['title']
-        self.authors = data['authors']
+        self.authors = ", ".join(data['authors'])
         self.publisher = data['publisher']
         try:
             self.picture_link = data['imageLinks']['thumbnail']

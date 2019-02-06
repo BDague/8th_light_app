@@ -23,7 +23,14 @@ body {
             <input type='submit' value='Search'>
         </form>
         <br> 
+    {% if page_number %}
+    <a href="{{ '/{}/{}'.format(search_word, 1) }}">{{ First }}</a> ...
+    {% for page in range(0, 7) %}
+    <a href="{{ '/{}/{}'.format(search_word, page_number+page) }}">{{ page_number+page }}</a>
+    {% endfor %}
+    {% endif %}
     </div>
+
 {% if book_data %}
 
 {% for book in book_data %}
@@ -32,10 +39,7 @@ body {
 <h2 class="book-title"> {{ book.title }} </h2> <br>
 <div class="book-info">
     <p>
-    Written by: 
-    {% for author in book.authors %}
-    {{ author }} 
-    {% endfor %}
+    Written by: {{ book.authors }}
     <br>
     Publishing Information: {{ book.publisher }} <br>
     <a href="{{ book.info_link }}">Click here for additional information</a><br>
@@ -44,8 +48,9 @@ body {
 </div>
 {% endfor %}
 {% endif %}
-
+<br>
 </body>
+
 
 <footer>
     Created by Brian Dague <br>
