@@ -17,9 +17,12 @@ class BookAPIRequestHandler():
 
         book_json = requests.Response()
         try:
-            formed_url = self.url.format(term, os.environ['GOOG_API_KEY'], page)
-            book_json = requests.get(formed_url, timeout=self.timeout)
-            book_json.raise_for_status()
+            if term:
+                formed_url = self.url.format(term, os.environ['GOOG_API_KEY'], page)
+                book_json = requests.get(formed_url, timeout=self.timeout)
+                book_json.raise_for_status()
+            else:
+                return {}
 
         except requests.exceptions.ConnectionError:
             return {'error': 'Could not reach the Google Books API'}

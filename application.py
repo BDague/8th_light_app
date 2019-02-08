@@ -5,7 +5,7 @@ application = Flask(__name__, template_folder='templates', static_folder='static
 
 @application.route('/', methods=['GET'])
 def open():
-    return render_template('index.html')
+    return render_template('index.html', book_data=None)
 
 @application.route('/', defaults={'term':None, 'page': 1}, methods=['POST'])
 @application.route('/<term>/<page>', methods=['GET'])
