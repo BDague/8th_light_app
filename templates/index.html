@@ -17,13 +17,13 @@ body {
 <body>
     <div class="search_text">
         <h1> Search for a book! </h1>
-
         <form action='/' method='POST'>
             <input type='search' name='term' autofocus>
             <input type='submit' value='Search'>
         </form>
+
     {% if page_number %}
-    <a href="{{ '/{}/{}'.format(search_word, 1) }}">{{ First }}</a> ...
+    <a href="{{ '/{}/{}'.format(search_word, 1) }}">&lt;&lt; Page 1</a> ...
     {% for page in range(0, 7) %}
     <a href="{{ '/{}/{}'.format(search_word, page_number+page) }}">{{ page_number+page }}</a>
     {% endfor %}
@@ -35,7 +35,7 @@ body {
 {% for book in book_data %}
 <div class="book-container">
     <image class="book-image" src="{{ book.picture_link }}" alt="No image available.">
-<h2 class="book-title"> {{ book.title }} </h2> <br>
+<h2 class="book-title"> {{ book.title }} </h2>
 <div class="book-info">
     <p> Written by: {{ book.authors }} </p>
     <p> Publishing Information: {{ book.publisher }} </p>
@@ -47,9 +47,7 @@ body {
 <br>
 </body>
 
-
 <footer>
     Created by Brian Dague <br>
     Background courtesy of : <a href="https://www.freepik.com/free-photos-vectors/poster">Poster vector created by macrovector - www.freepik.com</a>
-    
 </footer>

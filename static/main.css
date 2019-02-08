@@ -15,6 +15,10 @@ body, html {
     width: 100%;
 }
 
+p {
+    margin-left: 30px;
+}
+
 .book-container {
     margin: 20px 20px 0 0;
     overflow: auto;
@@ -24,9 +28,13 @@ body, html {
     box-shadow: 10px 10px 2px #888;
 }
 
+.book-container a:link { color: white; }
+.book-container a:visited { color: #ABB0BA; }
+
 .book-image {
     float: left;
-    padding: 10px;
+    border-style: solid;
+    border-color: white;
 }
 
 
@@ -36,6 +44,7 @@ img.book-image {
 
 .book-title {
     font-weight: bold;
+    margin-left: 140px;
 }
 
 .book-info {
