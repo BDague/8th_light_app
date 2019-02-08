@@ -43,8 +43,8 @@ body {
 </div>
 </div>
 {% endfor %}
-{% else %}
-    <div class="book-conainer">
+{% elif request.method == 'POST' %}
+    <div class="book-container">
         <h2> No results Found. </h2>
     </div>
 {% endif %}
